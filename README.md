@@ -6,11 +6,10 @@ Competition: [Click here!](https://www.kaggle.com/c/sberbank-russian-housing-mar
  
 ### 1. Data Preprocessing 
 
-
 For data preprocessing we tried to clean the data in some steps:
   
-full_sq: total area in square meters, including loggias, balconies, and other non-residential areas
-life_sq: living area in square meters, excluding loggias, balconies, and other non-residential areas
+* `full_sq: total area in square meters, including loggias, balconies, and other non-residential areas`
+* `life_sq: living area in square meters, excluding loggias, balconies, and other non-residential areas`
 
 * The life square should be less than the full square and if life: if life_sq > full_sq we put NaN
 
@@ -35,26 +34,25 @@ life_sq: living area in square meters, excluding loggias, balconies, and other n
 
 ### 2. Feature Engineeting
 
-  We add some features of engineering:
-  Relative floor = number of floor / max floor.
-  Relative kitchen square = kitchen square / full square.
-  Room size = life square / number of rooms.
-  Then we encode object column values with values between 0 and (n_classes-1).
-
+  * We add some features of engineering:
+  * Relative floor = number of floor / max floor.
+  * Relative kitchen square = kitchen square / full square.
+  * Room size = life square / number of rooms.
+  * Then we encode object column values with values between 0 and (n_classes-1).
 
 ### 3. Feature Selection
 
-  We splitted the Date into two columns day and month after that we drop the column ‘time stamp’. We used all features for training.
+* We splitted the Date into two columns day and month after that we drop the column ‘time stamp’. We used all features for training.
 
 
 ### 4. Model Selection
 
-- Then we use XGBRegressor for many reasons it is Highly Flexible, it uses the power of parallel processing, and it is designed to handle missing data with its in-build features (the dataset contains many NaN values)
+* Then we use XGBRegressor for many reasons it is Highly Flexible, it uses the power of parallel processing, and it is designed to handle missing data with its in-build features (the dataset contains many NaN values)
 
 
 ### 5. Model Development
 
-- But first, we use GridSearchCV to search over specified parameter values for an estimator (XGBRegressor) to find the best parameters. (Tuning stage)
+* But first, we use GridSearchCV to search over specified parameter values for an estimator (XGBRegressor) to find the best parameters. (Tuning stage)
 
 ### 6. Model Quality Assesment
 
