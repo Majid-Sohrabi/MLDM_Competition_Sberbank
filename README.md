@@ -58,4 +58,7 @@ For data preprocessing we tried to clean the data in some steps:
 
 * We did many trials and we could achive ~0.87% accuracy for training.
 * We submitted in Kaggle, we got a score = 0.3161, and our rank was around 157.
+
+### 7. Future Investigation
+
 * For the next step, we are planning to apply Neural Network to improve the score, and also we will try to find the best parameters for XGBRegressor.
