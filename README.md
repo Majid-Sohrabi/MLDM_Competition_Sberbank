@@ -62,3 +62,10 @@ For data preprocessing we tried to clean the data in some steps:
 ### 7. Future Investigation
 
 * For the next step, we are planning to apply Neural Network to improve the score, and also we will try to find the best parameters for XGBRegressor.
+
+### 7.1 
+
+* As further analysis, we implemented random forest, linear regression, two different neural networks (one without LSTM and another with LSTM) in TensorFlow.
+* For random forest we are witness that the algorithm has a good performance in our data, on the other hand, linear regression was not able to achieve a good result.
+* For the neural network (both with LSTM and without it) we split the training data into train and validation parts to monitor if the model will become overfitted on our data or not (because we don't have the test data). Additionally, we sorted both training and validation data, and based on that we plotted the true value for target and predicted value by our model to see if the result fitted each other or not.
+* We applied our custom network, and we investigated with many layers, batch size, learning rate, drop out, ... but finally we found that our model can achieve the better performance with the default value for batch size, learning rate, and without drop out.
