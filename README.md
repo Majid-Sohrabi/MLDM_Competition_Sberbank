@@ -65,7 +65,9 @@ For data preprocessing we tried to clean the data in some steps:
 
 ### 7.1 
 
-* As further analysis, we implemented random forest, linear regression, two different neural networks (one without LSTM and another with LSTM) in TensorFlow.
+* As further analysis, we implemented random forest, linear regression, two different neural networks (one without LSTM and another with LSTM) in TensorFlow. Additionally we implemented the second stage of the normalization to fill NaN, -inf, and inf with proper values.
 * For random forest we are witness that the algorithm has a good performance in our data, on the other hand, linear regression was not able to achieve a good result.
 * For the neural network (both with LSTM and without it) we split the training data into train and validation parts to monitor if the model will become overfitted on our data or not (because we don't have the test data). Additionally, we sorted both training and validation data, and based on that we plotted the true value for target and predicted value by our model to see if the result fitted each other or not.
 * We applied our custom network, and we investigated with many layers, batch size, learning rate, drop out, ... but finally we found that our model can achieve the better performance with the default value for batch size, learning rate, and without drop out.
+
+In conclusion, when we uploaded the result into the Kaggle, we noticed that XGBRegressor had a better performance against other algorithms we implemented, and the reason is this method can accept NaN values so we don't need to manipulate the data so much. But for the other methods, we had to apply the second phase of the preprocessing to handle NaN, inf, and -inf values. Based on the fact that we have far much missing value then this phase will change the nature of the data, then those methods couldn't achieve good performance.
