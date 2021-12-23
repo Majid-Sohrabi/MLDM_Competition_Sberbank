@@ -31,6 +31,19 @@ For data preprocessing we tried to clean the data in some steps:
 
 * there are 4 apartment conditions, so we put Nan if apartment condition >= 5
 
+Second attempt to clean the data are describes as follows:
+
+* We encoded categorical features to numerical. We had 12 ["No", "Yes"] features and we mapped them to [0, 1].
+
+* There was a feature named 'ecology' with the categorical values ['no data', 'poor', 'satisfactory', 'good', 'excellent'] and we mapped them to [0, 1, 2, 3, 4].
+
+* Where was a feature named 'product_type' whih the categorical values ['Investment', 'OwnerOccupier'] and we mapped them to [0, 1] values.
+
+* We replaced the Nan values with the mean value of the column, -inf with the minimum value in the column, and inf with the maximum value in the column.
+
+* In the next step we removed the outliers, as an example 3M < price < 100M was selected, but if we do it we will discard about 9% of the dataset which is not logical. Consequently, we can conclude that the data has a lot of unreal and curropted values.
+
+* In the final step we normalized the dataset, for train and test we used MinMaxScaler(function), and for the target we standardized it by standatd deviation (std)
 
 ### 2. Feature Engineeting
 
