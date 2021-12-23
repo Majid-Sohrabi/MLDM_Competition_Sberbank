@@ -43,6 +43,7 @@ For data preprocessing we tried to clean the data in some steps:
 ### 3. Feature Selection
 
 * We splitted the Date into two columns day and month after that we drop the column ‘time stamp’. We used all features for training.
+* In another trial we extracted the important features by XGBRegressor and just selected the most 12 important features for exeriments.
 
 
 ### 4. Model Selection
